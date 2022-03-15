@@ -14,6 +14,8 @@ db.once('open', function(){
   console.log("mongodb 연결됨.");
 })
 
+// routes 등록
+require('./routes/chat'); //rest apt가 아님, url 필요없음
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

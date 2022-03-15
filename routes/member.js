@@ -18,6 +18,7 @@ const auth = require('../token/auth');
 
 //member 스키마 가져오기 import
 var member = require('../models/member');
+const { checkToken } = require('../token/auth');
 
 
 // 암호변경
@@ -136,16 +137,21 @@ router.get('/select', async function(req, res, next) {
 
 // 회원정보 찾기 1명
 // localhost:3000/member/select?_id=?
-router.get('/selectone', async function(req, res, next) {
+router.get('/selectone', auth.checkToken, async function(req, res, next) {
     try {
-        const result = await member.findOne({_id:req.query._id});
-        return res.json({status: 200, result : result});
+        const sessionID = req.body.USERID;
+        const result = await member.findOne({_id: sessionID})
+                .select({"name" : 1 , "age" :1});
+        console.log(result);
+        if(result !== null){
+            return res.json({status: 200, result : result});
+        }
+        return res.json({status: 0, result : result});
     } catch (error) {
         
         console.error(error)
         return res.json({status: -1});
     }
-    
 });
 
 // 회원 탈퇴
