@@ -11,9 +11,9 @@ const app = express();
 const http = require('http');
 const httpServer = http.createServer(app);
 
-
 const {Server} = require('socket.io');
 const io = new Server(httpServer, {path:'/socket', cors:{origins: '*:*'}});
+// 원래 proxy설정하면 cors : {origins: '*:*'} 안해줘도 되는데, 버전에 따라서 안되는 경우가 있더라
 
 httpServer.listen(3001, ()=>{
     console.log("http:127.0.0.1:3001/socket");
