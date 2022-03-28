@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -74,
-    "scrollLeft": -161,
+    "scrollTop": -95,
+    "scrollLeft": -190,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -19,7 +19,7 @@
     },
     "database": "Oracle",
     "databaseName": "",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-sql-ddl",
     "language": "Java",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -50,7 +50,7 @@
           "active": false,
           "left": 569.8572,
           "top": 688.5714,
-          "zIndex": 4,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60
         },
@@ -135,7 +135,7 @@
           "active": false,
           "left": 978.6668,
           "top": 191.8887,
-          "zIndex": 329,
+          "zIndex": 7,
           "widthName": 65.22265625,
           "widthComment": 67
         },
@@ -220,7 +220,7 @@
           "active": false,
           "left": 380,
           "top": 191,
-          "zIndex": 313,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 67
         },
@@ -299,13 +299,36 @@
               "widthDefault": 60
             },
             "id": "19eb39cc-4cb7-4b26-b738-3c9770bff2d3"
+          },
+          {
+            "name": "STDNO",
+            "comment": "학번",
+            "dataType": "NUMBER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "7c9ddb4a-b9c0-4ff2-9564-d6818df97278"
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 384,
           "top": 503,
-          "zIndex": 317,
+          "zIndex": 8,
           "widthName": 60,
           "widthComment": 80
         },
@@ -413,7 +436,7 @@
           "active": false,
           "left": 988.5557,
           "top": 498.2221,
-          "zIndex": 333,
+          "zIndex": 5,
           "widthName": 60,
           "widthComment": 67
         },
@@ -475,7 +498,7 @@
           "active": false,
           "left": 981,
           "top": 768,
-          "zIndex": 336,
+          "zIndex": 6,
           "widthName": 86.2841796875,
           "widthComment": 80
         },
@@ -526,7 +549,7 @@
             "e41ac057-4fe7-498b-9d00-9b54d8776d21"
           ],
           "x": 761.42138671875,
-          "y": 568.25,
+          "y": 540.75,
           "direction": "right"
         },
         "end": {
@@ -593,6 +616,32 @@
         "constraintName": "fk_classroom_to_course",
         "visible": true,
         "id": "4747f3e9-0a01-4564-9f20-d39757bad9df"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneOnly",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "8b1003e6-ae09-48e9-b492-8cb8d1967778",
+          "columnIds": [
+            "ecc9a39f-5a25-476c-be7a-35c98a80d6d0"
+          ],
+          "x": 978.6668,
+          "y": 257.1387,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "6fff2e67-08f1-4b8e-ad73-62a5abaf7511",
+          "columnIds": [
+            "7c9ddb4a-b9c0-4ff2-9564-d6818df97278"
+          ],
+          "x": 761.42138671875,
+          "y": 616.25,
+          "direction": "right"
+        },
+        "constraintName": "fk_student1_to_sub1",
+        "visible": true,
+        "id": "5b86fb29-eaf0-49ff-bf94-bb951d901247"
       }
     ]
   }
